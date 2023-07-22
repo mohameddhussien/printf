@@ -20,7 +20,7 @@ int (*get_print_func (char in_spec, va_list vars))(va_list)
 	{
 		if (check_spec[i].symbol == in_spec)
 		{
-			check_spec[i].func;
+`			check_spec[i].func;
 			return (0);
 		}
 		i++;
