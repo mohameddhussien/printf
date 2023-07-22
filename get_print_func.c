@@ -6,7 +6,7 @@
  *
  */
 
-int (*get_print_func (char in_spec, va_list vars))(va_list)
+int (*get_print_func (char in_spec))(va_list)
 {
 	specifier_t check_spec = {
 		{'c', print_char},
