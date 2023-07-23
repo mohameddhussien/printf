@@ -4,8 +4,12 @@
 #include <stdarg.h>
 
 /**
+ * struct specifier - Struct of specifiers and their functions.
+ * @symbol: %c, %s, %i, %d and %%
+ * @func: The corresponding functions to excute.
  *
- *
+ * Description: Choose specific symbol to activate it's
+ * function.
  */
 
 typedef struct specifier

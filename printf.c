@@ -24,6 +24,8 @@ int _printf(const char *format, ...)
 				return (1);
 			func_call(vars);
 		}
+		else
+			_putchar(format[i]);
 		i++;
 	}
 	return (0);
