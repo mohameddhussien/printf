@@ -17,11 +17,11 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
+	va_start(vars, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == percent)
 		{
-			va_start(vars, format);
 			/*	To skip counting %	*/
 			i++;
 			func_call = get_print_func(format[i]);
@@ -39,5 +39,6 @@ int _printf(const char *format, ...)
 			count++;
 		}
 	}
+	va_end(vars);
 	return (count);
 }
