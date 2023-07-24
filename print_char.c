@@ -10,11 +10,10 @@
 
 int print_char(va_list args)
 {
-	int i = 0;
 	char ch;
 
-	va_start(args, 1);
-	ch = va_arg(args, char);
+	ch = va_arg(args, int);
 	_putchar(ch);
-	
+	va_end(args);
+	return (1);
 }

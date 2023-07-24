@@ -1,6 +1,7 @@
 #ifndef PRINTF_H
 #define PRINTF_H
 
+#include <stdio.h>
 #include <stdarg.h>
 
 /**
@@ -20,5 +21,9 @@ typedef struct specifier
 
 int _putchar(char ch);
 int _printf(const char *format, ...);
+
+int (*get_print_func(char in_spec))(va_list);
+
+int print_char(va_list args);
 
 #endif
