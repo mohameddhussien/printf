@@ -30,5 +30,7 @@ int get_print_func(char *s, va_list vars);
 int print_char(va_list args);
 int print_string(va_list arg);
 int print_percent(void);
+int print_int(va_list args);
+int print_dec(va_list args);
 
 #endif
