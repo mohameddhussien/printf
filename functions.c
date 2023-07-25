@@ -33,26 +33,33 @@ int _strlen(char *s)
 }
 
 /**
- * print_string - Function to print a string.
- * @arg: next argument.
- *
- * Return: number of characters of the string.
+ * print_string - print a string.
+ * @val: argument.
+ * Return: the length of the string.
  */
 
-int print_string(va_list arg)
+int print_string(va_list val)
 {
-	char *str = va_arg(arg, char *);
+	char *s;
+	int i, len;
 
-	if (!str)
+	s = va_arg(val, char *);
+	if (s == NULL)
 	{
-		str = "(null)";
-		_puts(str);
-		return (_strlen(str));
+		s = "(null)";
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
 	}
-	_puts(str);
-	return (_strlen(str));
+	else
+	{
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
 }
-
 /**
  * print_percent - Function to print percent.
  *
