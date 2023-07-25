@@ -29,7 +29,7 @@ int print_int(va_list args)
 			num = num / 10;
 		}
 		num = n;
-		while (exp > 0)	
+		while (exp > 0)
 		{
 			digit = num / exp;
 			_putchar(digit + '0');
