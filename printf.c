@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 
 /**
  * _printf - Function to print like printf
@@ -10,35 +9,29 @@
 
 int _printf(const char *format, ...)
 {
+	va_list args;
 	int i = 0, count = 0;
 	char percent = 37;
-	va_list vars;
-	int (*func_call)(va_list);
 
+	va_start(args, format);
 	if (!format)
 		return (-1);
-	va_start(vars, format);
+Here:
 	while (format[i] != '\0')
 	{
 		if (format[i] == percent)
 		{
 			/*	To skip counting %	*/
-			i++;
-			func_call = get_print_func(format[i]);
-			count = i - 1;
-			if (func_call == NULL)
-				return (-1);
-			count += func_call(vars);
-			/*      To skip printing the format specifier      */
-			i++;
+			i = i + 1;
+			count += get_print_func(format[i], args);
+			/*	To skip counting the format specifier	*/
+			i = i + 1;
+			goto Here;
 		}
-		else
-		{
-			_putchar(format[i]);
-			i++;
-			count++;
-		}
+		_putchar(format[i]);
+		i++;
+		count++;
 	}
-	va_end(vars);
+	va_end(args);
 	return (count);
 }

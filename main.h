@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 /**
  * struct specifier - Struct of specifiers and their functions.
@@ -20,10 +21,14 @@ typedef struct specifier
 } specifier_t;
 
 int _putchar(char ch);
+void _puts(char *str);
+int _strlen(char *s);
 int _printf(const char *format, ...);
 
-int (*get_print_func(char in_spec))(va_list);
+int get_print_func(char in_spec, va_list vars);
 
 int print_char(va_list args);
+int print_string(va_list arg);
+int print_percent(va_list arg);
 
 #endif
