@@ -55,7 +55,6 @@ int print_string(va_list arg)
 
 /**
  * print_percent - Function to print percent.
- * @arg: argument list.
  *
  * Return: 1
  */

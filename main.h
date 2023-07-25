@@ -25,7 +25,7 @@ void _puts(char *str);
 int _strlen(char *s);
 int _printf(const char *format, ...);
 
-int get_print_func(char* s, va_list vars);
+int get_print_func(char *s, va_list vars);
 
 int print_char(va_list args);
 int print_string(va_list arg);
