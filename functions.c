@@ -18,7 +18,7 @@ int print_char(va_list arg)
 }
 
 /**
- * _strlen - Function to get string length.
+ * _strlen - Function to reset a number to 98.
  * @s: Address parameter.
  *
  * Return: string length.
@@ -28,38 +28,33 @@ int _strlen(char *s)
 	int i = 0;
 
 	while (*(s + i) != 0)
+	{
 		++i;
+	}
 	return (i);
 }
 
 /**
- * print_string - print a string.
- * @val: argument.
- * Return: the length of the string.
+ * print_string - Function to print a string.
+ * @arg: next argument.
+ *
+ * Return: number of characters of the string.
  */
 
-int print_string(va_list val)
+int print_string(va_list arg)
 {
-	char *s;
-	int i, len;
+	char *str = va_arg(arg, char*);
 
-	s = va_arg(val, char *);
-	if (s == NULL)
+	if (!str)
 	{
-		s = "(null)";
-		len = _strlen(s);
-		for (i = 0; i < len; i++)
-			_putchar(s[i]);
-		return (len);
+		str = "(null)";
+		_puts(str);
+	return (0);
 	}
-	else
-	{
-		len = _strlen(s);
-		for (i = 0; i < len; i++)
-			_putchar(s[i]);
-		return (len);
-	}
+	_puts(str);
+	return (_strlen(str));
 }
+
 /**
  * print_percent - Function to print percent.
  *

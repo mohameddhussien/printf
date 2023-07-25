@@ -21,6 +21,7 @@ typedef struct specifier
 } specifier_t;
 
 int _putchar(char ch);
+void _puts(char *str);
 int _strlen(char *s);
 int _printf(const char *format, ...);
 
