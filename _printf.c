@@ -21,11 +21,8 @@ Here:
 	{
 		if (format[i] == percent)
 		{
-			/*	To skip counting %	*/
-			i = i + 1;
 			count += get_print_func(format[i], args);
-			/*	To skip counting the format specifier	*/
-			i = i + 1;
+			i = i + 2;
 			goto Here;
 		}
 		_putchar(format[i]);

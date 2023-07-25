@@ -10,14 +10,15 @@
 
 int print_char(va_list arg)
 {
-	char c = va_arg(arg, int);
+	char s;
 
-	_putchar(c);
+	s = va_arg(val, int);
+	_putchar(s);
 	return (1);
 }
 
 /**
- * _strlen - Function to reset a number to 98.
+ * _strlen - Function to get string length.
  * @s: Address parameter.
  *
  * Return: string length.
@@ -59,11 +60,8 @@ int print_string(va_list arg)
  * Return: 1
  */
 
-int print_percent(va_list arg)
+int print_percent()
 {
-	char ch = '%';
-
-	(void)arg;
-	_putchar(ch);
+	_putchar('%');
 	return (1);
 }
