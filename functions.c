@@ -12,7 +12,7 @@ int print_char(va_list arg)
 {
 	char s;
 
-	s = va_arg(val, int);
+	s = va_arg(arg, int);
 	_putchar(s);
 	return (1);
 }
@@ -60,7 +60,7 @@ int print_string(va_list arg)
  * Return: 1
  */
 
-int print_percent()
+int print_percent(void)
 {
 	_putchar('%');
 	return (1);

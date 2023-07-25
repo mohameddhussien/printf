@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0, count = 0;
 	char percent = 37;
+	char ch[] = {0, 0};
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -21,7 +22,9 @@ Here:
 	{
 		if (format[i] == percent)
 		{
-			count += get_print_func(format[i], args);
+			ch[0] = format[i];
+			ch[1] = format[i + 1];
+			count += get_print_func(ch, args);
 			i = i + 2;
 			goto Here;
 		}

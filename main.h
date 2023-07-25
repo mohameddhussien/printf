@@ -16,7 +16,7 @@
 
 typedef struct specifier
 {
-	char symbol;
+	char *symbol;
 	int (*func)();
 } specifier_t;
 
@@ -29,6 +29,6 @@ int get_print_func(char* s, va_list vars);
 
 int print_char(va_list args);
 int print_string(va_list arg);
-int print_percent(va_list arg);
+int print_percent(void);
 
 #endif
