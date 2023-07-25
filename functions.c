@@ -46,7 +46,7 @@ int print_string(va_list arg)
 	{
 		str = "(null)";
 		_puts(str);
-		return (0);
+		return (_strlen(str));
 	}
 	_puts(str);
 	return (_strlen(str));
