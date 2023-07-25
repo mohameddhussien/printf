@@ -28,9 +28,12 @@ Here:
 			i = i + 2;
 			goto Here;
 		}
-		_putchar(format[i]);
-		i++;
-		count++;
+		else
+		{
+			_putchar(format[i]);
+			i++;
+			count++;
+		}
 	}
 	va_end(args);
 	return (count);
